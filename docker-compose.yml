@@ -1,0 +1,13 @@
+version: '3'
+services:
+  product:
+    build: ./product_service
+    ports:
+      - "5000:5000"
+
+  website:
+    build: ./web_service
+    ports:
+      - "5001:5001"
+    depends_on:
+      - product
